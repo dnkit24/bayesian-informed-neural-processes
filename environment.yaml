@@ -1,0 +1,24 @@
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - matplotlib
+  - numpy
+  - pip
+  - python=3.11
+  - setuptools
+  - tqdm
+  - wandb
+  - wheel
+  - yaml
+  - pip:
+      - omegaconf~=2.3.0
+      - pandas
+      - seaborn
+      - scikit-learn~=1.5.2
+      - toml~=0.10.2
+      - optuna~=4.1.0
+      - torch
+      - scipy
+name: inps

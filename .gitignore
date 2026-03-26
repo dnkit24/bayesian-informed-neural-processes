@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+saves/
+wandb/
+.DS_Store
+*.ckpt
+.env
