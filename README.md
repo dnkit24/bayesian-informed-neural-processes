@@ -2,6 +2,12 @@
 
 This repository extends [Informed Neural Processes](https://github.com/kasia-kobalczyk/informed-meta-learning) (Kobalczyk & van der Schaar, ICLR 2025) with precision-weighted Bayesian knowledge fusion. The standard INP integrates domain knowledge via additive fusion, which cannot suppress wrong knowledge regardless of how much data is observed. BINP replaces this with a Gaussian product over separate data and knowledge belief distributions, enabling learned, per-dimension reliability weighting.
 
+## Paper
+
+[**Learning Source Reliability in Informed Neural Processes**](paper/learning-source-reliability.pdf) — David Nelischer.
+
+The accompanying paper describes the method, theoretical analysis, and experiments on synthetic and real-world temperature data.
+
 ## Method
 
 BINP introduces separate data and knowledge encoders that produce independent Gaussian beliefs over the latent space:
