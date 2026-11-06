@@ -1,6 +1,6 @@
 # Bayesian Informed Neural Processes
 
-This repository extends [Informed Neural Processes](https://github.com/kasia-kobalczyk/informed-meta-learning) (Kobalczyk & van der Schaar, ICLR 2025) with precision-weighted Bayesian knowledge fusion. The standard INP integrates domain knowledge via additive fusion, which cannot suppress wrong knowledge regardless of how much data is observed. BINP replaces this with a Gaussian product over separate data and knowledge belief distributions, enabling learned, per-dimension reliability weighting.
+This repository extends [Informed Neural Processes](https://github.com/kasia-kobalczyk/informed-meta-learning) (Kobalczyk & van der Schaar, ICLR 2025) with precision-weighted Bayesian knowledge fusion. The standard INP integrates domain knowledge via additive fusion, without an explicit reliability weight. BINP replaces this with a Gaussian product over separate data and knowledge belief distributions, enabling learned, per-dimension reliability weighting.
 
 ## Paper
 
@@ -55,16 +55,16 @@ python experiments/evaluate.py
 
 NLL on trending sinusoids (n=5 context points, 32 z-samples, 40 batches). Delta controls knowledge misspecification (0 = correct, higher = more wrong).
 
-| delta | NP | INP | INP(c) | **BINP(c)** |
+| delta | NP | INP | INP(c) | BINP(c) |
 |------:|-----:|------:|-------:|--------:|
 | 0   | 71.9 | **-16.3** | -13.1 | -10.2 |
 | 0.5 | 67.8 | 55.2  | 8.1   | **3.9** |
 | 1.0 | 65.9 | 315.6 | 93.3  | **63.1** |
-| 2.0 | 69.0 | 948.5 | 320.2 | **202.6** |
-| 3.0 | 73.1 | 833.3 | 378.2 | **159.7** |
-| 4.0 | 68.9 | 517.5 | 359.0 | **102.5** |
+| 2.0 | **69.0** | 948.5 | 320.2 | 202.6 |
+| 3.0 | **73.1** | 833.3 | 378.2 | 159.7 |
+| 4.0 | **68.9** | 517.5 | 359.0 | 102.5 |
 
-BINP(c) dominates under severe misspecification (delta >= 1) while remaining comparable at delta = 0.
+BINP(c) improves on the knowledge-conditioned baselines under misspecification, while INP performs best with correct knowledge. The data-only NP achieves the lowest NLL at delta ≥ 2.
 
 ## Acknowledgments
 

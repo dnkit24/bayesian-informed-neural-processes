@@ -1,7 +1,7 @@
 """Train all models (NP, INP, INP_c, BINP_c) on trending sinusoids.
 
-Usage (from code_repo_meta/):
-    conda run -n cam_env python experiments/train.py
+Run from the repository root:
+    python experiments/train.py
 """
 
 import torch

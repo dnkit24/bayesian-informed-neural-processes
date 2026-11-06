@@ -233,8 +233,6 @@ def main():
         "--run-name-suffix", type=str, help="Run name suffix", default="tuned"
     )
 
-    # Add other arguments as needed
-
     args = parser.parse_args()
 
     if args.xy_encoder_hidden_dim is None:

@@ -1,7 +1,7 @@
 """Evaluate trained models across knowledge perturbation levels and context sizes.
 
-Usage (from code_repo_meta/):
-    conda run -n cam_env python experiments/evaluate.py
+Run from the repository root after training:
+    python experiments/evaluate.py
 """
 
 import torch
